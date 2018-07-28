@@ -10,7 +10,7 @@ body {
 .App-header {
   text-align: center;
   color: rgb(51, 103, 214);
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .App-search {
@@ -67,47 +67,49 @@ body {
   margin: 20px auto;
 }
 
-.App-button{
-  background:rgb(51, 103, 214);
-  color:#fff;
-  border:none;
-  position:relative;
-  height:40px;
-  width:84px;
-  font-size:1em;
-  padding:0 1em;
-  cursor:pointer;
-  transition:800ms ease all;
-  outline:none;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+.App-button {
+  background: rgb(51, 103, 214);
+  color: #fff;
+  border: none;
+  position: relative;
+  height: 40px;
+  width: 84px;
+  font-size: 1em;
+  padding: 0 1em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
-.App-button:hover{
-  background:#fff;
-  color:rgb(51, 103, 214);
+.App-button:hover {
+  background: #fff;
+  color: rgb(51, 103, 214);
 }
 
-.App-button:before, .App-button:after{
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
-  background:rgb(51, 103, 214);
-  transition:400ms ease all;
+.App-button:before,
+.App-button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: rgb(51, 103, 214);
+  transition: 400ms ease all;
 }
 
-.App-button:after{
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
+.App-button:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
 }
 
-.App-button:hover:before, .App-button:hover:after{
-  width:100%;
-  transition:800ms ease all;
+.App-button:hover:before,
+.App-button:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
 }
 
 .App-input {
@@ -119,7 +121,7 @@ body {
   border-top: none;
   border-right: none;
   border-radius: 4px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   font-size: 1.2em;
   font-style: normal;
 }
@@ -128,7 +130,7 @@ body {
   border-bottom: 2px solid rgb(238, 238, 238);
   padding: 5px 4px;
   margin: 20px 0;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   font-size: 1.2em;
   font-style: normal;
   border-radius: 4px;
@@ -138,7 +140,7 @@ body {
 .App-no-result {
   margin: 20px auto;
   text-align: center;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .App-data-body {
@@ -148,7 +150,7 @@ body {
 .App-nav {
   border-top: 2px solid rgb(238, 238, 238);
   border-radius: 4px;
-  padding-top: 20px; 
+  padding-top: 20px;
 }
 
 .App-tweet-container {
@@ -158,19 +160,19 @@ body {
   padding: 4px;
 }
 
-.App-tweet-name{
-  font-family: "Comic Sans MS", cursive, sans-serif;
+.App-tweet-name {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   color: rgb(51, 103, 214);
 }
 
-.App-tweet-time{
-  font-family: "Comic Sans MS", cursive, sans-serif;
+.App-tweet-time {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   color: silver;
   font-size: 1em;
 }
 
-.App-tweet-meta{
-  font-family: "Comic Sans MS", cursive, sans-serif;
+.App-tweet-meta {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   color: silver;
   font-size: 1em;
 }
