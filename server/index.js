@@ -17,28 +17,42 @@ const client = new Twitter({
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
 app.use("/", serveStatic ( path.join (__dirname, '/../public') ) )
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/../public/index.html'));
 });
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get('/search', (req, res) => {
-  client.get('search/tweets', {q: 'node.js'}, function(error, tweets, response) {
-    console.log(tweets);
-    return res.json({});
+  client.get('search/tweets', {q: 'USC'}, function(error, tweets, response) {
+    if (error) {
+      console.log(error)
+    }
+    let values = tweets['statuses'].map( tweet => {
+      return  {
+          id:tweet.id,
+          created_at : tweet.created_at,
+          text : tweet.text,
+          retweets : tweet.retweet_count,
+          favorites : tweet.favorite_count,
+          name: tweet.user.name,
+          handle: tweet.user.screen_name
+      }
+    });
+    console.log(values);
+    return res.json(values);
   });
 });
 
 app.listen(
-  process.env.PORT || 3000, 
+  process.env.PORT || 4000, 
   ()=>{
-    console.log('Server running on port 3000!');
+    console.log('Server running on port 4000!');
   }
 );
