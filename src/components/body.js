@@ -5,6 +5,7 @@ import SortMetric from './body_components/sort_metric';
 import DataDisplay from './body_components/data_display';
 import Nav from './nav';
 
+// preprocess data to search online
 function processQs(prev) {
   prev = prev.replace(/\s/g, '');
   var res = prev.split(',');
@@ -16,6 +17,7 @@ function processQs(prev) {
   return str;
 }
 
+// our server url, should be in constant folder but for convience to put here.
 const url = 'http://ec2-35-167-189-54.us-west-2.compute.amazonaws.com';
 
 class Body extends React.Component {
@@ -30,6 +32,7 @@ class Body extends React.Component {
     };
   }
 
+  // handle main search fetch action
   handleSearchClicked = () => {
     this.setState({ time: new Date() });
     var parsedResult = processQs(this.state.q);
@@ -58,6 +61,7 @@ class Body extends React.Component {
       });
   };
 
+  // update to searching by favourites
   sortByFavourite = () => {
     this.state.data.sort(function(a, b) {
       return b.favorites - a.favorites;
@@ -65,6 +69,7 @@ class Body extends React.Component {
     this.forceUpdate();
   };
 
+  // update to searching by retweet
   sortByRetweet = () => {
     this.state.data.sort(function(a, b) {
       return b.retweets - a.retweets;
@@ -72,12 +77,14 @@ class Body extends React.Component {
     this.forceUpdate();
   };
 
+  // update page number
   updatePage = num => {
     this.setState({ pageNum: num }, () => {
       this.handleSearchClicked();
     });
   };
 
+  // update search Q whenever user changed
   handleInputOnchange = value => {
     this.setState({ q: value }, () => {
       console.log('changed to: ', value);

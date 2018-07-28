@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 class SortMetric extends React.Component {
   render() {
+    const { sortByFavourite, sortByRetweet } = this.props;
     return (
       <div className="App-sort-metric">
         <input
@@ -10,7 +11,7 @@ class SortMetric extends React.Component {
           name="sortBy"
           value="fav"
           onClick={() => {
-            this.props.sortByFavourite();
+            sortByFavourite();
           }}
         />
         <label>By Favourites</label>
@@ -20,7 +21,7 @@ class SortMetric extends React.Component {
           name="sortBy"
           value="ret"
           onClick={() => {
-            this.props.sortByRetweet();
+            sortByRetweet();
           }}
         />
         <label>By Retweets</label>

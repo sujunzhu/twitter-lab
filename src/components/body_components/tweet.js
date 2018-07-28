@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
+// Display for each tweet
 class Tweet extends React.Component {
   render() {
     const { tweet } = this.props;
@@ -18,5 +20,21 @@ class Tweet extends React.Component {
     );
   }
 }
+
+Tweet.propTypes = {
+  name: PropTypes.string,
+  created_at: PropTypes.string,
+  retweets: PropTypes.number,
+  favorites: PropTypes.number,
+  text: PropTypes.string
+};
+
+Tweet.defaultProps = {
+  name: '',
+  created_at: '',
+  retweets: 0,
+  favorites: 0,
+  text: ''
+};
 
 export default Tweet;

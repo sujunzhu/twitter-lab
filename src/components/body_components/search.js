@@ -5,6 +5,7 @@ class Search extends React.Component {
   render() {
     return (
       <div className="App-search">
+        {/* SearchInput */}
         <div className="App-search-input">
           <input
             className="App-input"
@@ -18,6 +19,7 @@ class Search extends React.Component {
           />
         </div>
 
+        {/* SearchButton */}
         <div className="App-search-button">
           <button
             className="App-button"
@@ -32,7 +34,8 @@ class Search extends React.Component {
 }
 
 Search.propTypes = {
-  handleSearchClicked: PropTypes.func.isRequired
+  handleSearchClicked: PropTypes.func.isRequired,
+  handleInputOnchange: PropTypes.func.isRequired
 };
 
 export default Search;
