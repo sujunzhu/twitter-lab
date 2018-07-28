@@ -16,6 +16,8 @@ function processQs(prev) {
   return str;
 }
 
+const url = 'http://ec2-35-167-189-54.us-west-2.compute.amazonaws.com';
+
 class Body extends React.Component {
   constructor() {
     super();
@@ -33,7 +35,7 @@ class Body extends React.Component {
     var parsedResult = processQs(this.state.q);
     console.log('Search: ', parsedResult);
     axios
-      .get(`http://localhost:4000/search/`, {
+      .get(`${url}:4000/search/`, {
         method: 'GET',
         params: {
           q: parsedResult,

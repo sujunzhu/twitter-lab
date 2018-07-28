@@ -35,6 +35,10 @@ app.get('/search', (req, res) => {
     q: req.query.q,
     count: req.query.num,
   };
+  if(!params.q || !params.count){
+    params.q = '';
+    params.count = 10;
+  }
   console.log(params);
   client.get('search/tweets', params, function(error, tweets, response) {
     let values = tweets['statuses'].map( tweet => {
