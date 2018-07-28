@@ -14,6 +14,12 @@ class DataDisplay extends React.Component {
         {
           tweets && tweets.length > 0 ? tweets : <div className='App-no-result'>Oops, search something~ :D</div>
         }
+        {
+          this.props.spent > 0 &&
+            <div style={{ margin: 'auto', textAlign: 'center', marginBottom: '20px' }}>
+              Time elapsed: {this.props.spent}s
+            </div>
+        }
       </div>
     );
   }

@@ -30,10 +30,12 @@ app.use(function(req, res, next) {
 });
 
 app.get('/search', (req, res) => {
-  client.get('search/tweets', {q: 'USC'}, function(error, tweets, response) {
-    if (error) {
-      console.log(error)
-    }
+  var params = {
+    q: req.query.q,
+    count: req.query.num,
+  };
+  console.log(params);
+  client.get('search/tweets', params, function(error, tweets, response) {
     let values = tweets['statuses'].map( tweet => {
       return  {
           id:tweet.id,

@@ -142,9 +142,13 @@ body {
 }
 
 .App-data-body {
-  border-bottom: 2px solid rgb(238, 238, 238);
-  border-radius: 4px;
   margin-bottom: 20px;
+}
+
+.App-nav {
+  border-top: 2px solid rgb(238, 238, 238);
+  border-radius: 4px;
+  padding-top: 20px; 
 }
 
 .App-tweet-container {
@@ -169,21 +173,4 @@ body {
   font-family: "Comic Sans MS", cursive, sans-serif;
   color: silver;
   font-size: 1em;
-}
-
-@media only screen and (max-width: 400px){
-  .App-search div {
-    flex-basis: 100%;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .App-search div label{
-    text-align: center;
-    flex-basis: 100%;
-  }
-  
-  .App-search div input {
-    flex-basis: 100%;
-  }
 }

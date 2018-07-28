@@ -7,7 +7,14 @@ class Search extends React.Component {
     return (
       <div className='App-search'>
         <div className='App-search-input'>
-          <input className='App-input' placeholder='Tags: #eg1, #eg2'/>
+          <input 
+            className='App-input' 
+            placeholder='Example Tags: #USC, #FightOn'
+            ref={(TagInput) => {this.TagInput = TagInput; }}
+            onChange={()=>{
+              this.props.handleInputOnchange(this.TagInput.value);
+            }}
+          />
         </div>
 
         <div className='App-search-button'>
