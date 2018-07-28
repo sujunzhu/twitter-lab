@@ -36,11 +36,15 @@ app.get('/search', (req, res) => {
     count: req.query.num,
   };
   if(!params.q || !params.count){
-    params.q = '';
+    params.q = '#USC, #FightOn';
     params.count = 10;
   }
   console.log(params);
   client.get('search/tweets', params, function(error, tweets, response) {
+    if(error) {
+      console.log(error);
+      return;
+    }
     let values = tweets['statuses'].map( tweet => {
       return  {
           id:tweet.id,
